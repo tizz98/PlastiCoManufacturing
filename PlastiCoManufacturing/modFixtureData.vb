@@ -14,7 +14,7 @@
             returnMaterials.Add(New BaseMaterial(material))
         Next
 
-        Return returnMaterials
+        Return sortMaterialList(returnMaterials)
     End Function
 
     Private Function getDefaultSubAssemblies() As List(Of SubAssembly)
@@ -33,7 +33,7 @@
             returnAssemblies.Add(New SubAssembly(defaultSubAssemblyStrings(i), materials))
         Next
 
-        Return returnAssemblies
+        Return sortSubAsmList(returnAssemblies)
     End Function
 
     Private Function getDefaultProducts() As List(Of Product)
@@ -50,6 +50,33 @@
             returnProducts.Add(New Product(defaultProductStrings(i), subAssemblies))
         Next
 
+        Return sortProductList(returnProducts)
+    End Function
+
+    Private Function sortProductList(products As List(Of Product)) As List(Of Product)
+        Dim returnProducts As New List(Of Product)
+        returnProducts.AddRange(products)
+
+        returnProducts.Sort(Function(x, y) x.name.CompareTo(y.name))
+
         Return returnProducts
+    End Function
+
+    Private Function sortSubAsmList(subAsm As List(Of SubAssembly)) As List(Of SubAssembly)
+        Dim returnSubAsm As New List(Of SubAssembly)
+        returnSubAsm.AddRange(subAsm)
+
+        returnSubAsm.Sort(Function(x, y) x.name.CompareTo(y.name))
+
+        Return returnSubAsm
+    End Function
+
+    Private Function sortMaterialList(materials As List(Of BaseMaterial)) As List(Of BaseMaterial)
+        Dim returnMaterials As New List(Of BaseMaterial)
+        returnMaterials.AddRange(materials)
+
+        returnMaterials.Sort(Function(x, y) x.name.CompareTo(y.name))
+
+        Return returnMaterials
     End Function
 End Module
