@@ -7,6 +7,7 @@
     Private Sub frmProductMgmt_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         refreshProductList()
         refreshSubAssemblyList()
+        refreshBaseMaterialList()
     End Sub
 
     Private Sub refreshProductList()
@@ -18,6 +19,6 @@
     End Sub
 
     Private Sub refreshBaseMaterialList()
-        ' TODO
+        lstAllBasicMaterials.DataSource = BaseMaterial.getDisplayList(baseMaterials)
     End Sub
 End Class
