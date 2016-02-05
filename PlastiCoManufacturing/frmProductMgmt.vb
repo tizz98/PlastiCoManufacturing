@@ -1,5 +1,5 @@
 ﻿'------------------------------------------------------------
-'-                File Name: frmProductMgmt                 -
+'-               File Name: frmProductMgmt.vb               -
 '-                 Part of Project: Assign4                 -
 '------------------------------------------------------------
 '-                Written By: Elijah Wilson                 -
