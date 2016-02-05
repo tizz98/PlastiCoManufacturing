@@ -22,6 +22,7 @@ Partial Class frmProductMgmt
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lblProducts = New System.Windows.Forms.Label()
         Me.lstProducts = New System.Windows.Forms.ListBox()
         Me.btnAddProduct = New System.Windows.Forms.Button()
@@ -42,6 +43,12 @@ Partial Class frmProductMgmt
         Me.btnAddMaterialToSubAsm = New System.Windows.Forms.Button()
         Me.lstMaterialsInSubAsm = New System.Windows.Forms.ListBox()
         Me.lblMaterialsInSubAsm = New System.Windows.Forms.Label()
+        Me.errProduct = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.errSubAsm = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.errMaterial = New System.Windows.Forms.ErrorProvider(Me.components)
+        CType(Me.errProduct, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.errSubAsm, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.errMaterial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblProducts
@@ -215,6 +222,18 @@ Partial Class frmProductMgmt
         Me.lblMaterialsInSubAsm.TabIndex = 12
         Me.lblMaterialsInSubAsm.Text = "Basic Materials in Selected Subassembly:"
         '
+        'errProduct
+        '
+        Me.errProduct.ContainerControl = Me
+        '
+        'errSubAsm
+        '
+        Me.errSubAsm.ContainerControl = Me
+        '
+        'errMaterial
+        '
+        Me.errMaterial.ContainerControl = Me
+        '
         'frmProductMgmt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,6 +264,9 @@ Partial Class frmProductMgmt
         Me.MinimumSize = New System.Drawing.Size(898, 615)
         Me.Name = "frmProductMgmt"
         Me.Text = "PlastiCo Manufacturing"
+        CType(Me.errProduct, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.errSubAsm, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.errMaterial, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -270,4 +292,7 @@ Partial Class frmProductMgmt
     Friend WithEvents btnAddMaterialToSubAsm As Button
     Friend WithEvents lstMaterialsInSubAsm As ListBox
     Friend WithEvents lblMaterialsInSubAsm As Label
+    Friend WithEvents errProduct As ErrorProvider
+    Friend WithEvents errSubAsm As ErrorProvider
+    Friend WithEvents errMaterial As ErrorProvider
 End Class

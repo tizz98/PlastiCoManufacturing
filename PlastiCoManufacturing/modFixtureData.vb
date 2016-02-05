@@ -53,7 +53,7 @@
         Return sortProductList(returnProducts)
     End Function
 
-    Private Function sortProductList(products As List(Of Product)) As List(Of Product)
+    Public Function sortProductList(products As List(Of Product)) As List(Of Product)
         Dim returnProducts As New List(Of Product)
         returnProducts.AddRange(products)
 
@@ -62,7 +62,7 @@
         Return returnProducts
     End Function
 
-    Private Function sortSubAsmList(subAsm As List(Of SubAssembly)) As List(Of SubAssembly)
+    Public Function sortSubAsmList(subAsm As List(Of SubAssembly)) As List(Of SubAssembly)
         Dim returnSubAsm As New List(Of SubAssembly)
         returnSubAsm.AddRange(subAsm)
 
@@ -71,7 +71,7 @@
         Return returnSubAsm
     End Function
 
-    Private Function sortMaterialList(materials As List(Of BaseMaterial)) As List(Of BaseMaterial)
+    Public Function sortMaterialList(materials As List(Of BaseMaterial)) As List(Of BaseMaterial)
         Dim returnMaterials As New List(Of BaseMaterial)
         returnMaterials.AddRange(materials)
 

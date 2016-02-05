@@ -2,6 +2,8 @@
     Public name As String
     Public baseMaterials As List(Of BaseMaterial)
 
+    Public Const INVALID_SUBASM_ERROR_STR As String = "This name for a subassembly is invalid, please try a different name."
+
     Public Sub New(name As String)
         Me.name = name
         Me.baseMaterials = New List(Of BaseMaterial)
@@ -25,5 +27,12 @@
         End If
 
         Return returnSubAsm
+    End Function
+
+    Public Shared Function validateNewSubAsm(subAsms As List(Of SubAssembly), newSubAsmName As String) As Boolean
+        ' "Hi" = "hi", so we make each name lowercase before comparing
+        Dim index As Integer = subAsms.FindIndex(Function(s) s.name.ToLower() = newSubAsmName.ToLower())
+
+        Return index < 0  ' < 0 means it wasn't found in the list, thus being valid
     End Function
 End Class

@@ -1,6 +1,8 @@
 ﻿Public Class BaseMaterial
     Public name As String
 
+    Public Const INVALID_MATERIAL_ERROR_STR As String = "This name for a basic material is invalid, please try a different name."
+
     Public Sub New(name As String)
         Me.name = name
     End Sub
@@ -18,5 +20,12 @@
         End If
 
         Return returnMaterials
+    End Function
+
+    Public Shared Function validateNewBaseMaterial(materials As List(Of BaseMaterial), newMaterialName As String) As Boolean
+        ' "Hi" = "hi", so we make each name lowercase before comparing
+        Dim index As Integer = materials.FindIndex(Function(m) m.name.ToLower() = newMaterialName.ToLower())
+
+        Return index < 0  ' < 0 means it wasn't found in the list, thus being valid
     End Function
 End Class

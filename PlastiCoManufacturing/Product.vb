@@ -2,6 +2,8 @@
     Public name As String
     Public subAssemblies As List(Of SubAssembly)
 
+    Public Const INVALID_PRODUCT_ERROR_STR As String = "This name for a product is invalid, please try a different name."
+
     Public Sub New(name As String)
         Me.name = name
         Me.subAssemblies = New List(Of SubAssembly)
@@ -24,5 +26,12 @@
         End If
 
         Return returnValues
+    End Function
+
+    Public Shared Function validateNewProduct(products As List(Of Product), newProductName As String) As Boolean
+        ' "Hi" = "hi", so we make each name lowercase before comparing
+        Dim index As Integer = products.FindIndex(Function(p) p.name.ToLower() = newProductName.ToLower())
+
+        Return index < 0  ' < 0 means it wasn't found in the list, thus being valid
     End Function
 End Class
