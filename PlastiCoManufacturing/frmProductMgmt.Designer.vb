@@ -34,6 +34,14 @@ Partial Class frmProductMgmt
         Me.lblAllSubasm = New System.Windows.Forms.Label()
         Me.txtAddNewSubAsm = New System.Windows.Forms.TextBox()
         Me.btnAddSubAsm = New System.Windows.Forms.Button()
+        Me.txtNewMaterial = New System.Windows.Forms.TextBox()
+        Me.btnAddNewMaterial = New System.Windows.Forms.Button()
+        Me.lstAllBasicMaterials = New System.Windows.Forms.ListBox()
+        Me.lblAllBasicMaterials = New System.Windows.Forms.Label()
+        Me.btnRemoveMaterialFromSubAsm = New System.Windows.Forms.Button()
+        Me.btnAddMaterialToSubAsm = New System.Windows.Forms.Button()
+        Me.lstMaterialsInSubAsm = New System.Windows.Forms.ListBox()
+        Me.lblMaterialsInSubAsm = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblProducts
@@ -138,11 +146,88 @@ Partial Class frmProductMgmt
         Me.btnAddSubAsm.Text = "Add New" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Subasm"
         Me.btnAddSubAsm.UseVisualStyleBackColor = True
         '
+        'txtNewMaterial
+        '
+        Me.txtNewMaterial.Location = New System.Drawing.Point(602, 525)
+        Me.txtNewMaterial.Name = "txtNewMaterial"
+        Me.txtNewMaterial.Size = New System.Drawing.Size(241, 20)
+        Me.txtNewMaterial.TabIndex = 19
+        '
+        'btnAddNewMaterial
+        '
+        Me.btnAddNewMaterial.Location = New System.Drawing.Point(505, 511)
+        Me.btnAddNewMaterial.Name = "btnAddNewMaterial"
+        Me.btnAddNewMaterial.Size = New System.Drawing.Size(91, 46)
+        Me.btnAddNewMaterial.TabIndex = 18
+        Me.btnAddNewMaterial.Text = "Add New" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Material"
+        Me.btnAddNewMaterial.UseVisualStyleBackColor = True
+        '
+        'lstAllBasicMaterials
+        '
+        Me.lstAllBasicMaterials.FormattingEnabled = True
+        Me.lstAllBasicMaterials.Location = New System.Drawing.Point(523, 402)
+        Me.lstAllBasicMaterials.Name = "lstAllBasicMaterials"
+        Me.lstAllBasicMaterials.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.lstAllBasicMaterials.Size = New System.Drawing.Size(347, 95)
+        Me.lstAllBasicMaterials.TabIndex = 17
+        '
+        'lblAllBasicMaterials
+        '
+        Me.lblAllBasicMaterials.AutoSize = True
+        Me.lblAllBasicMaterials.Location = New System.Drawing.Point(520, 385)
+        Me.lblAllBasicMaterials.Name = "lblAllBasicMaterials"
+        Me.lblAllBasicMaterials.Size = New System.Drawing.Size(126, 13)
+        Me.lblAllBasicMaterials.TabIndex = 16
+        Me.lblAllBasicMaterials.Text = "List of All Basic Materials:"
+        '
+        'btnRemoveMaterialFromSubAsm
+        '
+        Me.btnRemoveMaterialFromSubAsm.Location = New System.Drawing.Point(371, 456)
+        Me.btnRemoveMaterialFromSubAsm.Name = "btnRemoveMaterialFromSubAsm"
+        Me.btnRemoveMaterialFromSubAsm.Size = New System.Drawing.Size(128, 41)
+        Me.btnRemoveMaterialFromSubAsm.TabIndex = 15
+        Me.btnRemoveMaterialFromSubAsm.Text = "->"
+        Me.btnRemoveMaterialFromSubAsm.UseVisualStyleBackColor = True
+        '
+        'btnAddMaterialToSubAsm
+        '
+        Me.btnAddMaterialToSubAsm.Location = New System.Drawing.Point(371, 402)
+        Me.btnAddMaterialToSubAsm.Name = "btnAddMaterialToSubAsm"
+        Me.btnAddMaterialToSubAsm.Size = New System.Drawing.Size(128, 41)
+        Me.btnAddMaterialToSubAsm.TabIndex = 14
+        Me.btnAddMaterialToSubAsm.Text = "<-"
+        Me.btnAddMaterialToSubAsm.UseVisualStyleBackColor = True
+        '
+        'lstMaterialsInSubAsm
+        '
+        Me.lstMaterialsInSubAsm.FormattingEnabled = True
+        Me.lstMaterialsInSubAsm.Location = New System.Drawing.Point(19, 402)
+        Me.lstMaterialsInSubAsm.Name = "lstMaterialsInSubAsm"
+        Me.lstMaterialsInSubAsm.Size = New System.Drawing.Size(328, 95)
+        Me.lstMaterialsInSubAsm.TabIndex = 13
+        '
+        'lblMaterialsInSubAsm
+        '
+        Me.lblMaterialsInSubAsm.AutoSize = True
+        Me.lblMaterialsInSubAsm.Location = New System.Drawing.Point(16, 385)
+        Me.lblMaterialsInSubAsm.Name = "lblMaterialsInSubAsm"
+        Me.lblMaterialsInSubAsm.Size = New System.Drawing.Size(202, 13)
+        Me.lblMaterialsInSubAsm.TabIndex = 12
+        Me.lblMaterialsInSubAsm.Text = "Basic Materials in Selected Subassembly:"
+        '
         'frmProductMgmt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(882, 612)
+        Me.ClientSize = New System.Drawing.Size(882, 577)
+        Me.Controls.Add(Me.txtNewMaterial)
+        Me.Controls.Add(Me.btnAddNewMaterial)
+        Me.Controls.Add(Me.lstAllBasicMaterials)
+        Me.Controls.Add(Me.lblAllBasicMaterials)
+        Me.Controls.Add(Me.btnRemoveMaterialFromSubAsm)
+        Me.Controls.Add(Me.btnAddMaterialToSubAsm)
+        Me.Controls.Add(Me.lstMaterialsInSubAsm)
+        Me.Controls.Add(Me.lblMaterialsInSubAsm)
         Me.Controls.Add(Me.txtAddNewSubAsm)
         Me.Controls.Add(Me.btnAddSubAsm)
         Me.Controls.Add(Me.lstAllSubAsm)
@@ -174,4 +259,12 @@ Partial Class frmProductMgmt
     Friend WithEvents lblAllSubasm As Label
     Friend WithEvents txtAddNewSubAsm As TextBox
     Friend WithEvents btnAddSubAsm As Button
+    Friend WithEvents txtNewMaterial As TextBox
+    Friend WithEvents btnAddNewMaterial As Button
+    Friend WithEvents lstAllBasicMaterials As ListBox
+    Friend WithEvents lblAllBasicMaterials As Label
+    Friend WithEvents btnRemoveMaterialFromSubAsm As Button
+    Friend WithEvents btnAddMaterialToSubAsm As Button
+    Friend WithEvents lstMaterialsInSubAsm As ListBox
+    Friend WithEvents lblMaterialsInSubAsm As Label
 End Class
