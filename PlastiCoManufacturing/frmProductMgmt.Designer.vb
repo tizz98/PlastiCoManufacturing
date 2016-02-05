@@ -240,6 +240,9 @@ Partial Class frmProductMgmt
         Me.Controls.Add(Me.btnAddProduct)
         Me.Controls.Add(Me.lstProducts)
         Me.Controls.Add(Me.lblProducts)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(898, 615)
+        Me.MinimumSize = New System.Drawing.Size(898, 615)
         Me.Name = "frmProductMgmt"
         Me.Text = "PlastiCo Manufacturing"
         Me.ResumeLayout(False)
