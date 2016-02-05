@@ -72,6 +72,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseMaterial.vb" />
     <Compile Include="frmProductMgmt.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +80,7 @@
       <DependentUpon>frmProductMgmt.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="modFixtureData.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -94,6 +96,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Product.vb" />
+    <Compile Include="SubAssembly.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmProductMgmt.resx">
