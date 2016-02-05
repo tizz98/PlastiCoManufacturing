@@ -108,4 +108,26 @@ Public Class frmProductMgmt
             refreshBaseMaterialList()
         End If
     End Sub
+
+    Private Sub btnAddSubAsmToProduct_Click(sender As Object, e As EventArgs) Handles btnAddSubAsmToProduct.Click
+        ' Add a new subassembly or subassemblies to a product
+        Dim product As Product = products(lstProducts.SelectedIndex)  ' this is the actual product from the list, i.e. same address in memory
+
+        For Each subAsm As String In lstAllSubAsm.SelectedItems
+            product.addSubAsm(New SubAssembly(subAsm))
+        Next
+
+        updateSubAssemblyFromProduct(product)
+    End Sub
+
+    Private Sub btnRemoveSubAsmFromProduct_Click(sender As Object, e As EventArgs) Handles btnRemoveSubAsmFromProduct.Click
+        ' Remove a subassembly or subassemblies from a product
+        Dim product As Product = products(lstProducts.SelectedIndex)  ' this is the actual product from the list, i.e. same address in memory
+
+        For Each subAsm As String In lstSubAsmInProduct.SelectedItems
+            product.removeSubAsm(subAsm)
+        Next
+
+        updateSubAssemblyFromProduct(product)
+    End Sub
 End Class

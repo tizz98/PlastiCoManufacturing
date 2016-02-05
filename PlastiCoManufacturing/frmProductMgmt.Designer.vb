@@ -98,6 +98,7 @@ Partial Class frmProductMgmt
         Me.lstSubAsmInProduct.FormattingEnabled = True
         Me.lstSubAsmInProduct.Location = New System.Drawing.Point(19, 206)
         Me.lstSubAsmInProduct.Name = "lstSubAsmInProduct"
+        Me.lstSubAsmInProduct.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
         Me.lstSubAsmInProduct.Size = New System.Drawing.Size(328, 95)
         Me.lstSubAsmInProduct.TabIndex = 5
         '
@@ -210,6 +211,7 @@ Partial Class frmProductMgmt
         Me.lstMaterialsInSubAsm.FormattingEnabled = True
         Me.lstMaterialsInSubAsm.Location = New System.Drawing.Point(19, 402)
         Me.lstMaterialsInSubAsm.Name = "lstMaterialsInSubAsm"
+        Me.lstMaterialsInSubAsm.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
         Me.lstMaterialsInSubAsm.Size = New System.Drawing.Size(328, 95)
         Me.lstMaterialsInSubAsm.TabIndex = 13
         '

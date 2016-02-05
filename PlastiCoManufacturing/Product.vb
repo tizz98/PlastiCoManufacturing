@@ -14,6 +14,20 @@
         Me.subAssemblies = subAssemblies
     End Sub
 
+    Public Sub addSubAsm(subAsm As SubAssembly)
+        subAssemblies.Add(subAsm)
+        subAssemblies = modFixtureData.sortSubAsmList(subAssemblies)
+    End Sub
+
+    Public Sub removeSubAsm(subAsmName As String)
+        Dim index As Integer = subAssemblies.FindIndex(Function(s) s.name.ToLower() = subAsmName.ToLower())
+
+        ' Make sure the sub assembly is in the sub assemblies for this product
+        If index >= 0 Then
+            subAssemblies.RemoveAt(index)
+        End If
+    End Sub
+
     Public Shared Function getDisplayList(products As List(Of Product), Optional sorted As Boolean = True) As List(Of String)
         Dim returnValues As New List(Of String)
 

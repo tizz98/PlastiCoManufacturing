@@ -14,6 +14,19 @@
         Me.baseMaterials = baseMaterials
     End Sub
 
+    Public Sub addMaterial(material As BaseMaterial)
+        baseMaterials.Add(material)
+        baseMaterials = modFixtureData.sortMaterialList(baseMaterials)
+    End Sub
+
+    Public Sub removeMaterial(materialName As String)
+        Dim index As Integer = baseMaterials.FindIndex(Function(m) m.name.ToLower() = materialName.ToLower())
+
+        If index >= 0 Then
+            baseMaterials.RemoveAt(index)
+        End If
+    End Sub
+
     Public Shared Function getDisplayList(subAssemblies As List(Of SubAssembly),
                                           Optional sorted As Boolean = True) As List(Of String)
         Dim returnSubAsm As New List(Of String)
