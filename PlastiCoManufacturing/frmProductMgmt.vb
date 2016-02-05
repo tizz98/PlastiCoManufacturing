@@ -56,7 +56,8 @@ Public Class frmProductMgmt
     End Sub
 
     Private Sub txtNewProduct_Validating(sender As Object, e As CancelEventArgs) Handles txtNewProduct.Validating
-        If Product.validateNewProduct(products, txtNewProduct.Text) Then
+        ' Remove error if the user clears the text box or the text is valid
+        If Product.validateNewProduct(products, txtNewProduct.Text) Or String.IsNullOrEmpty(txtNewProduct.Text) Then
             errProduct.SetError(txtNewProduct, String.Empty)
         Else
             errProduct.SetError(txtNewProduct, Product.INVALID_PRODUCT_ERROR_STR)
@@ -74,7 +75,7 @@ Public Class frmProductMgmt
     End Sub
 
     Private Sub btnAddSubAsm_Click(sender As Object, e As EventArgs) Handles btnAddSubAsm.Click
-        If SubAssembly.validateNewSubAsm(subAssemblies, txtAddNewSubAsm.Text) Then
+        If SubAssembly.validateNewSubAsm(subAssemblies, txtAddNewSubAsm.Text) Or String.IsNullOrEmpty(txtAddNewSubAsm.Text) Then
             errSubAsm.SetError(txtAddNewSubAsm, String.Empty)
         Else
             errSubAsm.SetError(txtAddNewSubAsm, SubAssembly.INVALID_SUBASM_ERROR_STR)
@@ -82,6 +83,7 @@ Public Class frmProductMgmt
     End Sub
 
     Private Sub txtAddNewSubAsm_Validating(sender As Object, e As CancelEventArgs) Handles txtAddNewSubAsm.Validating
+        ' Remove error if the user clears the text box or the text is valid
         If SubAssembly.validateNewSubAsm(subAssemblies, txtAddNewSubAsm.Text) Then
             subAssemblies.Add(New SubAssembly(txtAddNewSubAsm.Text))
             subAssemblies = modFixtureData.sortSubAsmList(subAssemblies)
@@ -92,7 +94,8 @@ Public Class frmProductMgmt
     End Sub
 
     Private Sub txtNewMaterial_Validating(sender As Object, e As CancelEventArgs) Handles txtNewMaterial.Validating
-        If BaseMaterial.validateNewBaseMaterial(baseMaterials, txtNewMaterial.Text) Then
+        ' Remove error if the user clears the text box or the text is valid
+        If BaseMaterial.validateNewBaseMaterial(baseMaterials, txtNewMaterial.Text) Or String.IsNullOrEmpty(txtNewMaterial.Text) Then
             errMaterial.SetError(txtNewMaterial, String.Empty)
         Else
             errMaterial.SetError(txtNewMaterial, BaseMaterial.INVALID_MATERIAL_ERROR_STR)

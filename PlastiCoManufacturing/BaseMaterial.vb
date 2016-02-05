@@ -26,6 +26,7 @@
         ' "Hi" = "hi", so we make each name lowercase before comparing
         Dim index As Integer = materials.FindIndex(Function(m) m.name.ToLower() = newMaterialName.ToLower())
 
-        Return index < 0  ' < 0 means it wasn't found in the list, thus being valid
+        ' < 0 means it wasn't found in the list, thus being valid
+        Return index < 0 And Not String.IsNullOrWhiteSpace(newMaterialName)
     End Function
 End Class

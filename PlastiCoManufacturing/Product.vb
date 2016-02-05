@@ -46,6 +46,7 @@
         ' "Hi" = "hi", so we make each name lowercase before comparing
         Dim index As Integer = products.FindIndex(Function(p) p.name.ToLower() = newProductName.ToLower())
 
-        Return index < 0  ' < 0 means it wasn't found in the list, thus being valid
+        ' < 0 means it wasn't found in the list, thus being valid
+        Return index < 0 And Not String.IsNullOrWhiteSpace(newProductName)
     End Function
 End Class
