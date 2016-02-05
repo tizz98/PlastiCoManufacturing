@@ -130,4 +130,26 @@ Public Class frmProductMgmt
 
         updateSubAssemblyFromProduct(product)
     End Sub
+
+    Private Sub btnAddMaterialToSubAsm_Click(sender As Object, e As EventArgs) Handles btnAddMaterialToSubAsm.Click
+        ' Add a new material or materials to a subassembly
+        Dim subAsm As SubAssembly = subAssemblies(lstAllSubAsm.SelectedIndex)  ' this is the actual subasm from the list, i.e. same address in memory
+
+        For Each material As String In lstAllBasicMaterials.SelectedItems
+            subAsm.addMaterial(New BaseMaterial(material))
+        Next
+
+        updateMaterialFromSubAsm(subAsm)
+    End Sub
+
+    Private Sub btnRemoveMaterialFromSubAsm_Click(sender As Object, e As EventArgs) Handles btnRemoveMaterialFromSubAsm.Click
+        ' Remove a material or materials from a subassembly
+        Dim subAsm As SubAssembly = subAssemblies(lstAllSubAsm.SelectedIndex)  ' this is the actual subasm from the list, i.e. same address in memory
+
+        For Each material As String In lstMaterialsInSubAsm.SelectedItems
+            subAsm.removeMaterial(material)
+        Next
+
+        updateMaterialFromSubAsm(subAsm)
+    End Sub
 End Class
